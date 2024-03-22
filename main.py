@@ -6,6 +6,10 @@ import undetected_chromedriver as undetected
 from selenium.webdriver.common.by import By
 import time
 import re
+from telebot import TeleBot
+from secret import TOKEN
+
+bot = TeleBot(TOKEN)
 
 options = Options()
 options.add_argument('--headless')
