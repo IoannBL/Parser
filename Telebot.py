@@ -80,27 +80,19 @@ class FlatFinderBot:
         
         self.driver.quit()
 
-
+        
 flat_finder_bot = FlatFinderBot(bot)
-
-
 @bot.message_handler(commands=['start'])
 def start_message(message):
     flat_finder_bot.start_message(message)
-
 
 @bot.message_handler(func=lambda message: flat_finder_bot.user_states.get(message.chat.id) == 'awaiting_location')
 def get_location(message):
     flat_finder_bot.get_location(message)
 
-
 @bot.message_handler(func=lambda message: flat_finder_bot.user_states.get(message.chat.id) == 'awaiting_price')
 def get_price(message):
     flat_finder_bot.get_price(message)
-
-
-
-
 
 if __name__ == "__main__":
     flat_finder_bot.start_bot()

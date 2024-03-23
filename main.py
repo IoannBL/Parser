@@ -14,7 +14,6 @@ bot = TeleBot(TOKEN)
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
-# Установка и запуск драйвера
 service = Service(ChromeDriverManager().install())
 driver = undetected.Chrome(service=service)
 
