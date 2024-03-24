@@ -37,7 +37,7 @@ class FlatFinderBot:
     async def start_message(self, message):
         await self.bot.send_message(message.chat.id,
                               "Привет, я помогу подобрать тебе квартиру с нужными параметрами в нужной локации."
-                              "Пожалуйста, введи название станции метро с большой буквы (например, 'Тестовская'), если локация не важна введи '1':")
+                              "Пожалуйста, введи название станции метро с большой буквы (например, 'Тестовская'):")
         self.user_states[message.chat.id] = 'location'
         self.chat_id = message.chat.id
     
