@@ -14,6 +14,7 @@ bot = TeleBot(TOKEN)
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
+
 service = Service(ChromeDriverManager().install())
 driver = undetected.Chrome(service=service)
 
@@ -42,10 +43,9 @@ p = 300000
 l = "Тестовская"
 
 while True:
-    # Получаем данные с текущей страницы
+
     parsed_data = getting_data(driver)
-    
-    # Выводим данные с текущей страницы
+
     for d in parsed_data:
         digits = re.sub(r'\D', '', d[3])
         if int(digits) <= p and l in d[2]:
@@ -61,7 +61,7 @@ while True:
         driver.execute_script("arguments[0].scrollIntoView();", element)
         next_button = driver.find_element(By.XPATH, '//nav[@data-name="Pagination"]/a[contains(span, "Дальше")]')
         next_button.click()
-        time.sleep(2)  # Подождать, чтобы страница полностью загрузилась
+        time.sleep(2)
     except NoSuchElementException:
         break
 
