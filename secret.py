@@ -1,1 +1,1 @@
-TOKEN = "6805596791:AAFUfQOjnXDbsuWehSJqVTxalfxfPagqTeo"
+TOKEN = ""
