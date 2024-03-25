@@ -21,6 +21,7 @@ class FlatFinderBot:
         self.driver = None
         self.chat_id = None
         self.parsing = True
+        
     async def start_bot(self):
         await self.bot.polling()
     
@@ -127,5 +128,4 @@ async def stop_parsing(message):
     await flat_finder_bot.help_pars(message)
 
 if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(flat_finder_bot.start_bot())
+    asyncio.run(flat_finder_bot.start_bot())
