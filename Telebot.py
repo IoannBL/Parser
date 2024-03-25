@@ -10,7 +10,7 @@ import undetected_chromedriver as undetected
 import time
 import re
 import os
-# current_directory = os.path.dirname(os.path.abspath(__file__))
+
 
 bot = AsyncTeleBot(TOKEN)
 
@@ -127,4 +127,5 @@ async def stop_parsing(message):
     await flat_finder_bot.help_pars(message)
 
 if __name__ == "__main__":
-    asyncio.run(flat_finder_bot.start_bot())
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(flat_finder_bot.start_bot())
