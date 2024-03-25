@@ -9,7 +9,7 @@
 /start - начало нового поиска
 /stop - остановка поиска
 ### Пример использования:
-![alt text](<Пример работы.PNG>)
+![Пример работы](https://github.com/IoannBL/Parser/assets/98663779/ad1847f6-0e94-4fe9-acdd-a6ffe6aa548f)
 ## Как найти
 Бот выложен на хостинг PythonAnywhere
 Имя бота в telegram: @NaitiHatyBot
