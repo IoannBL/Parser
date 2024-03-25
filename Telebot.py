@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 import undetected_chromedriver as undetected
 import time
 import re
-import os
+
 
 
 bot = AsyncTeleBot(TOKEN)
@@ -80,6 +80,8 @@ class FlatFinderBot:
         time.sleep(1)
         
         while True:
+            if not self.parsing:
+                break
             flats = self.driver.find_elements(By.CLASS_NAME, "_93444fe79c--container--kZeLu._93444fe79c--link--DqDOy")
             for flat in flats:
                 href = flat.find_element(By.CLASS_NAME, "_93444fe79c--link--VtWj6").get_attribute("href")
@@ -91,8 +93,6 @@ class FlatFinderBot:
                 if int(digits) <= max_price and (location.lower() in loc.lower() or location == "1"):
                     await self.bot.send_message(self.chat_id,
                                           f"{href}\n{desc}\n{loc}\n{price}\n{price_desc}\n")
-            if not self.parsing:
-                break
             try:
                 element = self.driver.find_element(By.XPATH, '//*[@id="frontend-serp"]/div/div[7]/div[2]/button[2]')
                 self.driver.execute_script("arguments[0].scrollIntoView();", element)
