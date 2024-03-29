@@ -129,3 +129,4 @@ async def stop_parsing(message):
 
 if __name__ == "__main__":
     asyncio.run(flat_finder_bot.start_bot())
+    
